@@ -1,0 +1,117 @@
+//step 1
+
+Brainstorming
+
+MVP
+user
+app
+email
+password
+verified
+recipe
+ingredients
+instructions
+public
+private
+view recipes
+likes
+review
+Grocery List
+Occasions
+
+// step 2 
+
+user (userid, username, password)
+
+post recipe (post_id, user_id, timestamp, public/private)
+
+ingredients (text)
+
+instructions (text)
+
+get recipes (title, post_id)
+
+duplicate ingredients and move to list ( user_id, list_id)
+
+occassions - (group_id, post_id)
+
+// step 3
+
+“one-to-one”: ingredients to ingredients-to-post 
+
+
+“one-to-many”: posts table - reviews (1 post, many reviews)
+users - reviews (1 users, many reviews)
+
+
+“many-to-many”:
+
+
+  occassions - posts (many occassions, many posts)
+
+
+// step 4 
+
+verified (user_id, unique)
+
+grocery (user_id, list_id, ingredients)
+
+likes (boolean, like_id, post_id, user_id)
+
+review (review_id, post_id, user_id)
+
+
+// part 2 step 2
+
+Columns
+
+ingredients
+-ingredients_id (ingredients for a specific recipe)
+-ingredients_name
+
+ingredients_of_post
+-post_ingredients_id
+-ingredients_id (to pull the ingredients)
+-posts_id (to know which recipe's ingredients we need)
+
+posts 
+-post_id 
+-user_id (author)
+-timestamp (time posted)
+-recipeName 
+-instructionsText (flavor text + instructions)
+-likes (boolean value)
+-review_id (comment section)
+-public/private (boolean value)
+
+reviews
+-review_id
+-user_id (author of review)
+-post_id (post reviewed)
+-review (text value)
+
+occasions
+-occasions_id
+-user_id
+-post_id
+-occasionsName
+
+users
+-user_id 
+-username (of user)
+-password (of user)
+-email (of user)
+
+groceryList
+-list-id 
+-user_id (of user making the grocery list)
+-likes_id (to later code the ingredients moving to grocery list based on like of post)
+-post_ingredients_id (to pull ingredients from post liked)
+
+verified 
+-verified_id (of user)
+-user_id (that was verified)
+-date (date verified)
+
+
+
