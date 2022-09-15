@@ -1,10 +1,4 @@
-
-// npm i 
-// npm i dotenv
-// npm i sequelize pg pg-hstore
-
-require('dotenv').config()
-
+require('dotenv').config();
 const {CONNECTION_STRING} = process.env;
 
 const Sequelize = require('sequelize');
