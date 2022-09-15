@@ -127,7 +127,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     let dateTime = `${datePicker.value} ${timePicker.value}:00`
+    console.log(dateTime)
     let dateTimeObj = new Date(dateTime)
+    console.log(dateTimeObj)
 
     axios.post('http://localhost:9876/appt', {date: dateTimeObj, service: servicePicker.value})
         .then(() => {
